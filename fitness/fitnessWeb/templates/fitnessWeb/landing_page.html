@@ -1,0 +1,20 @@
+{% load static %}   
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% comment %} <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> {% endcomment %}
+    <link href="{% static 'fitnessWeb/styles.css' %}" rel="stylesheet">
+    <title>Fitness</title>
+</head>
+<body id="landing_body">
+    <h1 id="title">My Fitness App</h1>
+    <center><img id="landing_logo" src="{% static 'fitnessWeb/logo.png'%}" alt="Fitness Logo"/></center>
+    <center><a href = "{% url 'login'%}"><button class="landing_button">Log In</button></a></center>
+    </br>
+    <center><a href = "{% url 'register'%}"><button class="landing_button">Sign Up</button></a></center>
+</body>
+</html>

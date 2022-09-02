@@ -1,0 +1,476 @@
+#landing_body{
+    background-color: #21b8ff;
+}
+#title{
+    margin: auto;
+    text-align: center;
+    margin-top: 10%;
+    font-family: sans-serif;
+    color: white;
+    font-size: 50px;
+}
+
+#landing_logo{
+    width: 40%;
+    margin: auto;
+}
+
+.landing_button{
+    border-radius: 5px;
+    height: 40px;
+    background-color: red;
+    color: white;
+    font-size: 30px;
+}
+
+.forms{
+    margin: 40px;
+}
+
+#strip{
+    background-color: rgb(190, 187, 187);
+    height: 90px;
+    display: flex;
+}
+
+#home_logo{
+    width: 180px;
+}
+
+.banner{
+    display: flex;
+}
+
+.profile{
+    position: absolute; /* Take your picture out of the flow */
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; /* Make the picture taking the size of it's parent */
+    width: 100%; /* This if for the object-fit */
+    height: 100%; /* This if for the object-fit */
+    object-fit: cover; /* Equivalent of the background-size: cover; of a background-image */
+    object-position: center;
+    border-radius: 50%;
+}
+
+#profile_div{
+    position: relative;
+    width: 65px;
+    height: 65px;
+    margin-left: auto; 
+    margin-right: 50px;
+    margin-top: 10px;
+}
+
+#profile_div:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%; /* The padding depends on the width, not on the height, so with a padding-bottom of 100% you will get a square */
+}
+#headers{
+    display: flex;
+    margin: auto;
+    width: fit-content;
+}
+
+.header{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+#content{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.class_title{
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-bottom: 0px;
+}
+
+.class_weekday{
+    font-size: 20px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    background-color: white;
+    border-radius: 20px;
+    width: 115px;
+    border: 2px solid black;
+}
+
+.class_time{
+    font-size: 20px;
+    background-color: white;
+    border-radius: 20px;
+    width: 80px;
+    border: 2px solid black;
+}
+
+#myclasses_list{
+    display: flex;
+}
+
+.class_li {
+    background-color: transparent;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    list-style: none;
+    margin-left: 10px;
+    margin-right: 10px;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+  
+  /* This container is needed to position the front and back side */
+.class_circle {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+.class_li:hover .class_circle {
+    transform: rotateY(180deg);
+}
+  
+  /* Position the front and back side */
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+  
+  /* Style the front side (fallback if image is missing) */
+.front {
+    background-color: #bbb;
+    color: black;
+}
+  
+  /* Style the back side */
+.back {
+    background-color: dodgerblue;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.popuptext {
+    visibility: hidden;
+    width: 190px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    position: absolute;
+    margin-left: -95px;
+}
+
+.show {
+    visibility: visible;
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+
+summary{
+    font-size: 24px;
+    display: flex;
+}
+
+details{
+    border: 2px solid black;
+    margin-bottom: 5px;
+}
+
+.class_signup{
+    font-size: 15px;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: 50px;
+    height: fit-content;
+    margin-top: 3px;
+}
+
+.class_signup:hover{
+    background-color: green;
+    color: white;
+}
+
+.signup_form{
+    display: inline;
+    margin-left: auto;
+    margin-right: 50px;
+}
+
+#message_box{
+    display: flex;
+    border: 2px solid black;
+    height: 68vh;
+    width: 900px;
+    position: relative;
+}
+
+.instructor{
+    list-style: none;
+    height: 50px;
+    display: flex;
+    margin-bottom: 7px;
+    margin-left: 10px;
+}
+
+#instructors{
+    width: 250px;
+    height: fit-content;
+}
+
+#chat_box{
+    border-left: 2px solid black;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    position: relative;
+}
+
+#instructor_list{
+    margin-bottom: 0px;
+    margin-left: -40px;
+}
+
+.default_profile{
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+}
+
+.instructor_name{
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+#chat_message{
+    font-size: 24px;
+}
+
+.instructor_box:hover{
+    background-color: rgb(229, 224, 224);
+}
+
+#chat_strip{
+    background-color: #cacaca;
+    display: flex;
+}
+
+#send_strip{
+    display: none;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #cacaca
+}
+
+.send_img{
+    height: 50px;
+    width: 50px;
+}
+
+#chat_template{
+    position: relative;
+    height: 100%;
+    display: none;
+}
+
+.send_div{
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.message_content{
+    height: 40px;
+    margin-top: 5px;
+    border-radius: 4px;
+    margin-left: 100px;
+    width: 70%;
+}
+
+h4{
+    margin-top: 10px;
+    margin-left: 7px;
+}
+
+#past_messages{
+    width: 100%;
+    height: 79%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+#past_messages2{
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.my_message{
+    width: fit-content;
+    max-width: 600px;
+    overflow-wrap: break-word;
+    margin-left: auto;
+    margin-right: 0;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+}
+
+.other_message{
+    width: fit-content;
+    max-width: 600px;
+    overflow-wrap: break-word;
+    margin-left: 0;
+    margin-right: auto;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+}
+
+#send_strip2{
+    display: none;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #cacaca
+}
+
+.full_pic{
+    width: 200px;
+}
+
+@media (orientation: portrait){
+    #strip{
+        width: 100%;
+        height: 180px;
+    }
+    #home_logo{
+        width: 250px;
+        height: 80%;
+    }
+    .banner h1{
+        font-size: 60px;
+    }
+    #profile_div{
+        width: 140px;
+        height: 140px;
+    }
+    h2{
+        font-size: 50px;
+    }
+    h3{
+        font-size: 40px;
+    }
+    #myclasses_list{
+        display: block
+    }
+    .class_li{
+        width: 400px;
+        height: 400px;
+    }
+    .class_title{
+        font-size: 36px;
+        margin-top: 50px;
+    }
+    .class_time{
+        font-size: 34px;
+        width: 120px;
+    }
+    .class_weekday{
+        font-size: 34px;
+        width: 200px;
+    }
+    .back center p{
+        font-size: 34px;
+    }
+    .class_info{
+        font-size: 34px;
+    }
+    .popuptext{
+        font-size: 34px;
+        width: 380px;
+        margin-left: 0px;
+        left: 10px
+    }
+    summary{
+        font-size: 34px;
+    }
+    .class_signup{
+        font-size: 30px;
+    }
+    details p{
+        font-size: 28px;
+    }
+    #message_box{
+        width: 100%;
+        display: block;
+    }
+    #instructor_list{
+        display: flex;
+        margin-left: 0px;
+        padding-top: 10px;
+    }
+    #instructors{
+        width: 100%;
+        border-bottom: 2px solid black;
+    }
+    .instructor{
+        height: 70px;
+    }
+    .instructor_name{
+        font-size: 32px;
+    }
+    #chat_message{
+        font-size: 30px;
+    }
+    #chat_template{
+        height: 100%;
+    }
+    h4{
+        font-size: 37px;
+    }
+    .default_profile{
+        margin-top: 5px;
+    }
+    .message_content{
+        height: 60px;
+        font-size: 34px;
+    }
+    .my_message, .other_message{
+        font-size: 34px;
+    }
+    #past_messages{
+        flex: 1 1 auto;
+        height: 720px;
+    }
+    #chat_box{
+        height: 60vh;
+    }
+    #send_strip{
+        display: none !important;
+    }
+    #send_strip2{
+        display: flex;
+    }
+    
+}

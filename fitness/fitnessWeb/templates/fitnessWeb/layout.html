@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{% block title%}Fitness{%endblock%}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="{% static 'fitnessWeb/styles.css' %}" rel="stylesheet">
+        {% block script %}
+        {% endblock %} 
+    </head>
+    <body>
+        <div id="strip">
+            <div class="banner">
+                <img id="home_logo" src="{% static 'fitnessWeb/logo.png'%}">
+                <h1 style="margin-top: 20px" data-user="{{request.user.username}}">Welcome {{user.username}}!</h1>
+            </div>
+            <div id="profile_div">
+                {% comment %} make sure you use request.user. just user was giving me problems {% endcomment %}
+                <a href="{% url 'my_info' request.user.username %}" >
+                    <img class="profile" src="{{ request.user.pic.url }}" alt="Profile Pic">
+                </a>
+            </div>
+        </div>
+        <center><div id="headers">
+            <div class="header">
+                <a href="{% url 'classes'%}"><h2>Classes</h2></a> 
+            </div>
+            <div class="header">
+                <a href="{% url 'messages'%}"><h2>Messages</h2></a>
+            </div>
+        </div></center>
+        <div id="content">
+        {% block body %}
+        {% endblock %}
+        </div>
+    </body>
+</html>

@@ -1,0 +1,63 @@
+{% extends "fitnessWeb/layout.html" %}
+{%load static%}
+
+{% block body %}
+    <h3>My Classes</h3>
+    <ul id="myclasses_list">
+    {%for class in user_classes%}
+        {% comment %} <div>
+            {{class}}
+        </div> {% endcomment %}
+        <li class="class_li">
+            <div class="class_circle">
+                <div class="front">
+                </br>
+                    <center><p class="class_title">{{class.title}}</p></center>
+                    <center><p class="class_weekday">{{class.weekday}}</p></center>
+                    <center><p class="class_time">{{class.time}}</p></center>
+                </div>
+                <div class="back">
+                    <span class="popuptext" id="myPopup{{forloop.counter}}" onclick="notShow({{forloop.counter}})">{{class.gym_class.description}}</span>
+                </br>
+                    <center><p>Room: {{class.room}}</p></center>
+                    <center><p>Instructor: {{class.instructor}}</p></center>
+                    <center class="popup">
+                        {% comment %} <a class="class_info" onclick="myFunction({{forloop.counter}})" style="text-decoration: underline">
+                        More Details
+                        </a> {% endcomment %}
+                    </center>
+                </div>
+            </div>
+        </li>
+    {%endfor%}
+    </ul>
+    {% comment %} <h3>Available Classes</h3>
+    {%for class in available_classes%}
+    <details>
+        <summary>
+            &#9656;{{class.title}}
+            <form action = "{% url 'sign_up' class.id %}" method = "POST" class="signup_form">
+                {% csrf_token %}
+                <input class="class_signup" type = "submit" value="Sign Up">
+            </form>
+        </summary>
+        <p>
+            {{class.description}}
+        </br>
+            Meets {{class.weekday}}s at {{class.time}} with {{class.instructor}} in room: {{class.room}}
+        </p>
+    </details>
+    {%endfor%} {% endcomment %}
+    {% comment %} <script>
+        // When the user clicks on div, open the popup
+        function myFunction(popupID) {
+            var popup = document.getElementById("myPopup"+popupID);
+            popup.classList.toggle("show");
+        }
+
+        function notShow(popupID){
+            var popup = document.getElementById("myPopup"+popupID);
+            popup.classList.toggle("show");
+        }
+    </script> {% endcomment %}
+{%endblock%}

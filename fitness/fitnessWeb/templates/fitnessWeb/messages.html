@@ -1,0 +1,57 @@
+{% extends "fitnessWeb/layout.html" %}
+{%load static%}
+
+
+{% block body %}
+<center>
+<div id="message_box">
+    <div id="instructors">
+        <ul id="instructor_list">
+            <hr style = "border-top: 2px solid black">
+            {%for instructor in instructors%}
+            <div class="instructor_box">
+                <li class="instructor">
+                    <img class="default_profile" src="{% static 'fitnessWeb/user.png'%}">
+                    <div class="instructor_name">
+                        {{instructor}}
+                    </div>
+                </li>
+            </div>
+            <hr style = "border-top: 2px solid black">
+            {%endfor%}
+        </ul>
+    </div>
+    <div id="chat_box">
+        <center><div id="chat_message">
+            No Chat Currently Selected. Please Select an Instructor to Chat With
+        </div></center>
+        <div id="chat_template">
+            <div id="chat_strip">
+                <img class="default_profile" src="{% static 'fitnessWeb/user.png'%}">
+                <h4></h4>
+            </div>
+            <div id="past_messages">
+                <div id="past_messages2">
+                </div>
+            </div>
+        </div>
+        <div id="send_strip">
+            <input class="message_content"></input>
+            <div class="send_div">
+                <img class="send_img" src="{% static 'fitnessWeb/send.png'%}">
+            </div>
+        </div>
+    </div>
+    <div id="send_strip2">
+        <input class="message_content"></input>
+        <div class="send_div">
+            <img class="send_img" src="{% static 'fitnessWeb/send.png'%}">
+        </div>
+    </div>
+</div>
+</center>
+{%endblock%}
+
+{% block script %}
+    <script src="{% static 'fitnessWeb/messages.js' %}"></script>
+{% endblock %}
